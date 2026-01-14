@@ -6,7 +6,7 @@ A Python tool to automatically fetch and export health data from Withings API fo
 
 - **Comprehensive Data Export**: Fetch all your Withings health data including:
   - Body measurements (weight, body composition, vitals)
-- Activity data (steps, distance, calories)
+  - Activity data (steps, distance, calories)
   - Sleep data (duration, quality, stages, breathing)
   - Heart rate and blood pressure
   - And more...
@@ -38,14 +38,14 @@ A Python tool to automatically fetch and export health data from Withings API fo
 Using `uv` (recommended):
 
 ```bash
-cd /Users/christoph/Workspaces/withings-exporter
+cd /path/to/withings-exporter
 uv pip install -e .
 ```
 
 Or using `pip`:
 
 ```bash
-cd /Users/christoph/Workspaces/withings-exporter
+cd /path/to/withings-exporter
 pip install -e .
 ```
 
@@ -429,7 +429,8 @@ withings-exporter/
 ### Running Tests
 
 ```bash
-pytest tests/
+uv pip install -e ".[test]"
+python -m pytest -q
 ```
 
 ## Contributing
@@ -446,7 +447,7 @@ MIT License - see LICENSE file for details
 
 ## Acknowledgments
 
-- Built with [python-withings-api](https://github.com/vangorra/python_withings_api)
+- Built against the official [Withings API](https://developer.withings.com/)
 - Uses [Click](https://click.palletsprojects.com/) for CLI
 - Data stored with SQLite
 
