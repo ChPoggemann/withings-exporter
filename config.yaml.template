@@ -1,0 +1,46 @@
+# NOTE: API credentials (client_id, client_secret, callback_uri) are stored in ~/.withings/.env
+# See .env.template for the format
+
+# Data sync configuration
+sync:
+  # Fetch interval in seconds (3600 = 1 hour)
+  interval: 3600
+
+  # Data types to fetch (set to false to disable)
+  data_types:
+    measurements: true
+    activity: true
+    sleep: true
+    heart_rate: true
+
+# Storage configuration
+storage:
+  # Database path (default: ~/.withings/health_data.db)
+  database_path: "~/.withings/health_data.db"
+
+  # Keep raw API responses in database for debugging
+  store_raw_data: true
+
+# Export configuration
+export:
+  # Export directory (default: ~/.withings/exports/)
+  export_path: "~/.withings/exports/"
+
+  # Export format options
+  format:
+    # Include metadata in exports
+    include_metadata: true
+
+    # Pretty print JSON (more readable but larger files)
+    pretty_print: true
+
+# Logging configuration
+logging:
+  # Log level: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  level: "INFO"
+
+  # Log file path (default: ~/.withings/logs/exporter.log)
+  log_file: "~/.withings/logs/exporter.log"
+
+  # Also print logs to console
+  console: true
